@@ -2,7 +2,7 @@
 
 A personal fitness and wellness web app — designed and built by **Swetha (@swethaasiddi)** using AI-assisted, no-code development.
 
-**Live demo:** https://YOUR-USERNAME.github.io/bloom-and-burn/ *(replace with your GitHub Pages link)*
+**Live website:** https://siddiswetha.github.io/bloom-and-burn/
 
 ## About
 
