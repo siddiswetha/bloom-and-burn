@@ -8,7 +8,7 @@
 <title>Bloom and Burn — 7-Day Morning + Evening Weight Loss Plan for Women</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFF8F1; --surface:#FFFFFF; --surface2:#FFF1E6; --ink:#211915; --muted:#75665C; --line:#F0DDCC;
@@ -933,6 +933,340 @@ main.wrap{box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 4px 14px rgba(0,0,0,.
 }
 .topnav{position:relative;z-index:2}
 @media (prefers-reduced-motion: reduce){ .depth-mid{transform:none !important} }
+/* ================================================================
+   THE LIGHT GARDEN — an original design system for Bloom and Burn:
+   a warm glass terrarium of light that travels dawn → dusk as you
+   scroll. Espresso base, fine film grain, fluid glass lit from the
+   upper left with a true specular streak, Fraunces display type,
+   Manrope UI type. Visual layer only — every word, control,
+   section identity colour, pale tab tint with black letters and
+   every stored key stays exactly as shipped.
+   ================================================================ */
+:root{
+  color-scheme:dark;
+  --bg:#141013; --surface:rgba(255,244,235,.05); --surface2:rgba(255,244,235,.07);
+  --ink:#FAF3EC; --muted:#C9BBAE; --line:rgba(255,240,228,.14);
+  --shadow:10px 24px 54px rgba(10,4,2,.5);
+}
+html{background:#0E0A0C}
+body{
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-weight:450;
+  background:linear-gradient(180deg,#171114 0%,#120D10 46%,#0E0A0C 100%);
+  color:var(--ink);
+}
+button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif}
+/* Far plane — the light garden itself: warm dawn-to-dusk washes, softly out of
+   focus (depth of field), completely still. No star-dust, no aurora drift. */
+body::before{
+  animation:none !important; opacity:1; filter:blur(6px);
+  background:
+    radial-gradient(760px 520px at 14% -6%, rgba(246,190,110,.13), transparent 64%),
+    radial-gradient(680px 500px at 88% 4%, rgba(224,122,80,.09), transparent 64%),
+    radial-gradient(900px 640px at 50% 46%, rgba(190,110,90,.06), transparent 68%),
+    radial-gradient(620px 480px at 90% 88%, rgba(160,120,200,.05), transparent 64%),
+    radial-gradient(560px 440px at 6% 84%, rgba(120,180,170,.05), transparent 64%);
+  background-size:auto; background-position:0 0;
+}
+/* Fine film grain over the whole page — tactile warmth, static, whisper-quiet */
+body::after{
+  content:""; position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* Mid plane restyled warm — the old parallax script still drifts it gently */
+.depth-mid{background:
+  radial-gradient(560px 420px at 16% 20%, rgba(246,190,110,.10), transparent 65%),
+  radial-gradient(680px 520px at 84% 66%, rgba(224,110,80,.07), transparent 65%),
+  radial-gradient(520px 430px at 54% 90%, rgba(167,139,219,.06), transparent 65%)}
+/* Type — Fraunces for display, quotes and the timer; Manrope for everything functional */
+h1,h2,h3,h4,.cycle-title,.journal-date,.sleep-record-title,.yoga-title,.hero-tagline,.energy-quote,.phase-quote,.mizi-card h3,.video-info h3,.motivation p,.water-count{
+  font-family:"Fraunces",Georgia,serif; font-optical-sizing:auto;
+}
+h1,h2,h3,h4,.cycle-title,.journal-date,.sleep-record-title{font-weight:560}
+.energy-quote,.phase-quote,.hero-tagline{font-weight:480}
+.kicker,.video-step,.yoga-label,.day-num,.duration,.target-badge,.tag,.hero-handle,footer,
+.btn,.yt-btn,.yoga-video,.ex-links a,.cycle-arrow,.water-log-close,.journal-del,.check-btn,.water-slot-btn,
+.navlinks a,.day-tab,.journal-tab,.pill,.water-progress-line{
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+.water-count{font-weight:560;letter-spacing:.01em}
+/* Header — warm bar; the wordmark is Fraunces with a small-caps feel, no script font */
+.topnav{background:rgba(20,14,16,.86);border-bottom:1px solid rgba(255,240,226,.07)}
+.logo{
+  font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.42rem;line-height:1.1;
+  letter-spacing:.13em;font-variant-caps:all-small-caps;
+  color:#FBEEDD;background:none;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:currentColor;
+  text-shadow:0 0 18px rgba(246,190,110,.22);
+}
+.logo span{color:#F2A18C;background:none;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:currentColor;text-shadow:0 0 16px rgba(242,161,140,.28)}
+/* Hero title — warm dawn gradient with a soft ember glow and its floor shadow */
+.hero-copy h1{
+  background:linear-gradient(94deg,#F6C87E 0%,#EE9A6B 46%,#E87A8C 100%);
+  background-size:100% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 14px rgba(246,180,100,.26)) drop-shadow(0 0 34px rgba(232,120,90,.13)) drop-shadow(0 12px 22px rgba(0,0,0,.45));
+}
+/* Kinetic type — on load the hero lines settle in with a soft per-line rise */
+.hero-copy>*{animation:lgRise .85s cubic-bezier(.22,.8,.32,1) backwards}
+.hero-copy>*:nth-child(2){animation-delay:.08s}
+.hero-copy>*:nth-child(3){animation-delay:.16s}
+.hero-copy>*:nth-child(4){animation-delay:.24s}
+.hero-copy>*:nth-child(5){animation-delay:.32s}
+@keyframes lgRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+/* Section headings — a one-time 6px rise + fade as they enter (class added by JS only) */
+.lg-head{opacity:0;transform:translateY(6px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.8,.32,1)}
+.lg-head.lg-in{opacity:1;transform:none}
+/* FLUID GLASS — warm-tinted, lit top edge, soft bottom shade, and double shadows
+   that all fall to the lower right: one consistent key-light, upper left. */
+main.wrap,.hero-copy,.hero-energy,.hydration,.card,.session-card,.mizi-card,.switch-card,.exercise,.cycle-card,.journal-card,.journal-entry,.note-card,.notes-water,.phase-quotes,.yoga-warmup,.video-row,.water-log-card,.motivation{
+  background:linear-gradient(155deg,rgba(255,246,236,.065),rgba(255,246,236,.018) 55%,rgba(30,18,14,.05)) !important;
+  border-color:rgba(255,240,226,.15) !important;
+  box-shadow:inset 0 1px 0 rgba(255,246,232,.20), inset 0 -14px 26px rgba(20,8,4,.14), 5px 8px 20px rgba(8,3,2,.34), 16px 30px 58px rgba(8,3,2,.42) !important;
+}
+main.wrap::before,.hero-copy::before,.hero-energy::before,.hydration::before,.card::before,.session-card::before,.mizi-card::before,.switch-card::before,.exercise::before,.cycle-card::before,.journal-card::before,.journal-entry::before,.note-card::before,.notes-water::before,.phase-quotes::before,.yoga-warmup::before,.video-row::before,.water-log-card::before,.motivation::before{
+  background:linear-gradient(180deg,rgba(255,238,214,.5),rgba(255,238,214,.16) 22%,rgba(255,238,214,0) 50%,rgba(255,238,214,.16) 78%,rgba(255,238,214,.5));
+}
+main.wrap{box-shadow:inset 0 1px 0 rgba(255,246,232,.18), 8px 14px 34px rgba(8,3,2,.45), 22px 44px 84px rgba(8,3,2,.55) !important}
+/* Section identity colours stay — now as warm light through the glass */
+#morning .session-card,#morning .card{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(246,200,126,.35),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(246,169,120,.06) !important}
+#evening-gym .card,#evening-tips .card{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(240,146,104,.35),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(216,90,110,.06) !important}
+#sleep-cycle .card{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(183,156,255,.38),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(140,110,220,.08) !important}
+#menstrual-cycle .cycle-card{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(232,67,95,.38),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(220,80,110,.07) !important}
+#journal .journal-card,#journal .journal-entry{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(143,203,155,.35),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(90,160,110,.06) !important}
+#journal .note-card,#journal .notes-water{box-shadow:inset 0 1px 0 rgba(255,246,232,.20),inset 0 2px 0 rgba(242,193,78,.32),5px 8px 20px rgba(8,3,2,.34),16px 30px 58px rgba(8,3,2,.42),0 0 30px rgba(242,193,78,.05) !important}
+/* SPECULAR STREAK — real-glass light behaviour on the tilt cards: a soft pool of
+   light plus a diagonal streak that follows the cursor while the card tilts.
+   --gx/--gy/--glare are set by the tilt script; without it, no streak, flat glass. */
+.tilt3d{overflow:hidden}
+#energyPanel::after,.session-card.tilt3d::after,#eveningDayCard.tilt3d::after{
+  content:"";display:block !important;position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;
+  animation:none !important;
+  opacity:var(--glare,0);transition:opacity .45s ease;
+  background:
+    radial-gradient(340px 340px at calc(var(--gx,50)*1%) calc(var(--gy,50)*1%), rgba(255,244,220,.15), rgba(255,244,220,0) 62%),
+    linear-gradient(112deg, transparent 32%, rgba(255,240,214,.09) 47%, rgba(255,250,238,.15) 50%, rgba(255,240,214,.09) 53%, transparent 68%);
+  background-size:100% 100%, 300% 100%;
+  background-position:0 0, calc(var(--gx,50)*1%) 0;
+}
+/* HIGH ENERGY — "ember dawn": deep plum → ember coral → soft gold, darkened for white text */
+.hero-energy{
+  background:linear-gradient(180deg,rgba(24,6,14,.25),rgba(24,6,14,.05)),linear-gradient(148deg,#2B1220 0%,#571F2B 34%,#9C3428 62%,#CE6A3C 84%,#E2A45C 110%) !important;
+  border-color:rgba(255,220,190,.22) !important;color:#FFF6EC !important;
+  box-shadow:inset 0 1px 0 rgba(255,236,210,.25),5px 8px 20px rgba(8,3,2,.34),16px 32px 60px rgba(8,3,2,.44),0 0 40px rgba(206,106,60,.16) !important;
+}
+.hero-energy .kicker{color:#FFD9A8}
+.hero-energy-quote{color:#FFF9F1 !important;text-shadow:0 2px 18px rgba(40,8,4,.40)}
+.hero-energy-note{color:rgba(255,246,236,.92)}
+.hero-energy .energy-dots span{background:rgba(255,255,255,.32)}
+.hero-energy .energy-dots span.on{background:#FFE3B3}
+.he-drift-a{background:radial-gradient(closest-side,rgba(255,190,120,.45),rgba(255,190,120,0) 72%)}
+.he-drift-b{background:radial-gradient(closest-side,rgba(214,90,70,.50),rgba(214,90,70,0) 72%)}
+.he-drift-c{background:radial-gradient(closest-side,rgba(255,240,214,.28),rgba(255,240,214,0) 70%)}
+/* WATER — soft aqua light through warm glass */
+.hydration{
+  background:linear-gradient(150deg,rgba(16,74,86,.88),rgba(20,92,104,.72) 52%,rgba(44,120,128,.55)) !important;
+  border-color:rgba(150,220,215,.30) !important;color:#EFFAF7 !important;
+  box-shadow:inset 0 1px 0 rgba(230,255,250,.20),5px 8px 20px rgba(8,3,2,.34),16px 32px 60px rgba(8,3,2,.44),0 0 34px rgba(64,160,160,.16) !important;
+}
+.hydration h2{color:#D8F6F0}
+.hydration p{color:#BFEBE2}
+#hydration .water-hint{color:rgba(239,250,247,.85)}
+.water-count{color:#FFFFFF;text-shadow:0 2px 16px rgba(0,40,44,.35)}
+.water-progress-line{color:#EFFAF7}
+/* Breathing key-light — a fixed warm glow behind the glass whose colour the
+   motion script lerps from section to section as you scroll (dawn → dusk). */
+.lg-key{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(720px 520px at 50% 38%, rgba(var(--kl,246,190,110),.13), rgba(var(--kl,246,190,110),0) 65%)}
+/* ANIMATED BACKGROUND RIBBONS — a MotionSites-style aurora layer mixed into the
+   Light Garden at whisper opacity: three oversized, heavily blurred bands
+   (dawn gold → petal blush, ember coral, and a lavender band tinted by the
+   travelling key-light) flowing over tens of seconds. Ambient living light
+   only — fully feathered edges, no pulsing, and the espresso base, grain and
+   glass always dominate. Transform-only keyframes; browsers pause CSS
+   animation in hidden tabs on their own. */
+.lg-ribbons{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.09}
+.lg-ribbon{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform}
+.lg-ribbon-a{width:95vw;height:36vh;left:-18vw;top:-8vh;
+  background:linear-gradient(100deg,rgba(246,190,110,0) 5%,rgba(246,190,110,.75) 38%,rgba(244,169,188,.65) 68%,rgba(244,169,188,0) 96%);
+  animation:lgFlowA 52s ease-in-out infinite alternate}
+.lg-ribbon-b{width:90vw;height:34vh;right:-22vw;top:38vh;
+  background:linear-gradient(95deg,rgba(224,110,80,0) 8%,rgba(224,110,80,.7) 42%,rgba(246,170,110,.55) 72%,rgba(246,170,110,0) 97%);
+  animation:lgFlowB 64s ease-in-out infinite alternate}
+.lg-ribbon-c{width:80vw;height:30vh;left:-10vw;bottom:-10vh;
+  background:linear-gradient(100deg,rgba(167,139,219,0) 10%,rgba(var(--kl,246,190,110),.55) 45%,rgba(167,139,219,.5) 75%,rgba(167,139,219,0) 97%);
+  animation:lgFlowC 78s ease-in-out infinite alternate}
+@keyframes lgFlowA{from{transform:translate3d(0,0,0) rotate(-13deg)}to{transform:translate3d(11vw,5vh,0) rotate(-7deg)}}
+@keyframes lgFlowB{from{transform:translate3d(0,0,0) rotate(-9deg)}to{transform:translate3d(-12vw,-4vh,0) rotate(-15deg)}}
+@keyframes lgFlowC{from{transform:translate3d(0,0,0) rotate(-16deg)}to{transform:translate3d(9vw,-6vh,0) rotate(-10deg)}}
+/* Floating motes — the mid-air plane: tiny petal-pink and ember-gold dust
+   drifting slowly upward between the garden light and the crisp content. */
+.lg-motes{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.lg-mote{position:absolute;left:0;top:0;border-radius:50%;will-change:transform;
+  background:radial-gradient(circle,rgba(255,230,190,.95) 0%,rgba(255,210,150,.45) 38%,rgba(255,210,150,0) 70%)}
+.lg-mote.pink{background:radial-gradient(circle,rgba(255,214,228,.95) 0%,rgba(244,169,188,.45) 38%,rgba(244,169,188,0) 70%)}
+/* Micro-interactions — a one-pass light sweep on primary buttons, a soft ring
+   pulse when a calendar day is tapped, and ticks that draw themselves in. */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+  background:linear-gradient(112deg,transparent 34%,rgba(255,246,226,.38) 50%,transparent 66%);
+  transform:translateX(-135%);transition:transform .65s ease}
+.btn:hover::after,.btn:active::after{transform:translateX(135%)}
+.cycle-day:active{animation:lgDayPulse .45s ease-out}
+@keyframes lgDayPulse{0%{box-shadow:0 0 0 0 rgba(255,214,170,.45)}100%{box-shadow:0 0 0 12px rgba(255,214,170,0)}}
+.exercise.done .check-btn::after{animation:lgTick .22s ease-out}
+.water-slot-btn.ticked .tickbox::after{animation:lgTick .22s ease-out}
+@keyframes lgTick{from{opacity:0;transform:rotate(-45deg) scale(.3)}to{opacity:1;transform:rotate(-45deg) scale(1)}}
+@media (prefers-reduced-motion: reduce){
+  .hero-copy>*{animation:none !important}
+  .lg-head{opacity:1 !important;transform:none !important;transition:none !important}
+  .lg-motes,.lg-key{display:none !important}
+  .lg-ribbon{animation:none !important}
+  .btn::after{display:none !important}
+  .cycle-day:active{animation:none !important}
+  .exercise.done .check-btn::after,.water-slot-btn.ticked .tickbox::after{animation:none !important}
+  #energyPanel::after,.session-card.tilt3d::after,#eveningDayCard.tilt3d::after{opacity:0 !important;transition:none !important}
+}
+/* ================================================================
+   MEDIUM TYPE SCALE — the whole page at medium sizes only (her
+   order: no big fonts anywhere). Hero 34–52px, section headings
+   24–30px, sub-headings 19–22px, quotes 20–24px, body/labels
+   15–17px, timer digits 40–48px.
+   ================================================================ */
+body{font-size:16px}
+.hero-copy h1{font-size:clamp(2.125rem,5vw,3.25rem)}
+.hero-tagline{font-size:clamp(1.25rem,2.2vw,1.5rem)}
+.section-head h2{font-size:clamp(1.5rem,3vw,1.875rem)}
+main h2{font-size:clamp(1.5rem,3vw,1.875rem)}
+#about-project h2{font-size:clamp(1.5rem,3vw,1.875rem)}
+main h3{font-size:1.25rem}
+.card h3,.note-card h3,.notes-water h3,.switch-card h3{font-size:1.25rem}
+#dayTitle{font-size:1.375rem !important}
+.cycle-title{font-size:1.375rem}
+.water-log-head h3{font-size:1.375rem}
+.hero-energy-quote{font-size:clamp(1.25rem,2.6vw,1.5rem)}
+.phase-quote{font-size:clamp(1.25rem,2.4vw,1.5rem)}
+.water-count{font-size:clamp(2.5rem,6vw,3rem)}
+.water-progress-line{font-size:1.06rem}
+/* WHOLE-PAGE WELLNESS SOFTENING — warmer hairlines and softer tile edges on
+   calendars, logs, buttons and pills, so every section reads feminine
+   wellness, never athletic or techy. Colours and black tab letters unchanged. */
+.cycle-day{border-radius:14px;border-color:rgba(255,240,228,.12)}
+.water-slot-btn{border-radius:14px}
+.check-btn{box-shadow:inset 0 1px 0 rgba(255,246,232,.15)}
+.cycle-arrow{box-shadow:inset 0 1px 0 rgba(255,246,232,.14),0 6px 16px rgba(8,3,2,.25)}
+/* ================================================================
+   SECTION SIGNATURES — one soft living-light animation per section,
+   in the same family as the ribbons, motes and key-light. Layers sit
+   behind the content, clipped to their section's bounds, and their
+   keyframes run ONLY while the section carries .sig-on (added by
+   IntersectionObserver in the script below). Transform/opacity only.
+   ================================================================ */
+.sig-host{position:relative}
+.sig-host>*:not(.sig-layer){position:relative;z-index:1}
+.sig-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.sig-glow{position:absolute;border-radius:50%;pointer-events:none}
+.sig-mote{position:absolute;border-radius:50%;pointer-events:none;opacity:0}
+.sig-mote.gold{background:radial-gradient(circle,rgba(255,224,170,.95),rgba(246,190,110,0) 70%)}
+.sig-mote.ember{background:radial-gradient(circle,rgba(255,196,150,.95),rgba(232,120,74,0) 70%)}
+.sig-on .sig-mote{animation:sigDrift 12s linear infinite}
+@keyframes sigDrift{0%{transform:translate3d(0,12px,0);opacity:0}18%{opacity:.75}70%{opacity:.55}100%{transform:translate3d(16px,-52px,0);opacity:0}}
+@keyframes sigBreathe{from{transform:translateY(4px) scale(1);opacity:.55}to{transform:translateY(-4px) scale(1.045);opacity:.85}}
+/* MORNING — Sunrise: breathing golden sun-glow, faint fanning rays, gold motes */
+.sig-sun{width:360px;height:360px;top:-150px;right:-70px;background:radial-gradient(closest-side,rgba(246,200,126,.34),rgba(246,200,126,0) 72%)}
+.sig-on .sig-sun{animation:sigBreathe 7s ease-in-out infinite alternate}
+.sig-ray{position:absolute;top:6px;right:110px;width:280px;height:56px;border-radius:50%;transform-origin:100% 50%;background:linear-gradient(270deg,rgba(246,200,126,.12),rgba(246,200,126,0) 75%)}
+.sig-ray.r1{--rr:14deg;transform:rotate(14deg)}
+.sig-ray.r2{--rr:27deg;transform:rotate(27deg);right:92px}
+.sig-ray.r3{--rr:40deg;transform:rotate(40deg);right:74px}
+.sig-on .sig-ray{animation:sigFan 9s ease-in-out infinite alternate}
+.sig-on .sig-ray.r2{animation-delay:-3s}
+.sig-on .sig-ray.r3{animation-delay:-6s}
+@keyframes sigFan{from{transform:rotate(calc(var(--rr) - 2.5deg));opacity:.35}to{transform:rotate(calc(var(--rr) + 2.5deg));opacity:.7}}
+/* EVENING — Ember glow: slow low-amplitude firelight flicker, ember motes */
+.sig-emberglow{width:380px;height:380px;top:-160px;left:-80px;background:radial-gradient(closest-side,rgba(232,120,74,.32),rgba(232,120,74,0) 72%)}
+.sig-on .sig-emberglow{animation:sigFlicker 6s ease-in-out infinite}
+@keyframes sigFlicker{0%,100%{opacity:.5;transform:scale(1)}30%{opacity:.66;transform:scale(1.02)}55%{opacity:.57;transform:scale(1.01)}78%{opacity:.72;transform:scale(1.03)}}
+/* WATER — Ripples behind the countdown + a faint wave shimmer behind the section */
+.sig-wave{position:absolute;left:-20%;width:140%;height:130px;top:34%;background:linear-gradient(180deg,rgba(140,210,220,0),rgba(140,210,220,.055),rgba(140,210,220,0))}
+.sig-on .sig-wave{animation:sigWave 12s ease-in-out infinite alternate}
+@keyframes sigWave{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
+.sig-ripples{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;border-radius:inherit}
+#hydration .hydration>*{position:relative;z-index:1}
+#hydration .hydration>.sig-ripples{position:absolute;z-index:0}
+.sig-ring{position:absolute;left:50%;width:130px;height:130px;margin:-65px 0 0 -65px;border:1.5px solid rgba(160,225,220,.45);border-radius:50%;opacity:0}
+.sig-on .sig-ring{animation:sigRipple 7s linear infinite}
+.sig-on .sig-ring.r2{animation-delay:3.5s}
+@keyframes sigRipple{0%{transform:scale(.35);opacity:0}22%{opacity:.5}100%{transform:scale(1.7);opacity:0}}
+/* SLEEP — Moonlight: breathing lavender moon-glow, tiny twinkling stars */
+.sig-moon{width:340px;height:340px;top:-140px;right:-60px;background:radial-gradient(closest-side,rgba(183,156,255,.30),rgba(183,156,255,0) 72%)}
+.sig-on .sig-moon{animation:sigMoon 8s ease-in-out infinite alternate}
+@keyframes sigMoon{from{opacity:.45;transform:translateY(3px)}to{opacity:.78;transform:translateY(-3px)}}
+.sig-star{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(240,238,255,.9);box-shadow:0 0 6px 1px rgba(200,190,255,.5);opacity:.15}
+.sig-on .sig-star{animation:sigTwinkle 5s ease-in-out infinite alternate}
+@keyframes sigTwinkle{from{opacity:.12}to{opacity:.85}}
+/* MENSTRUAL — Petal drift: soft CSS rose petals + a gentle bloom pulse */
+.sig-petal{position:absolute;width:15px;height:12px;border-radius:90% 4px 90% 4px;background:radial-gradient(ellipse at 30% 30%,rgba(255,196,210,.85),rgba(232,106,130,.5));opacity:0;pointer-events:none}
+.sig-on .sig-petal{animation:sigPetal 15s linear infinite}
+@keyframes sigPetal{0%{transform:translate3d(0,-8px,0) rotate(0deg);opacity:0}12%{opacity:.75}55%{transform:translate3d(30px,64px,0) rotate(96deg);opacity:.6}100%{transform:translate3d(58px,128px,0) rotate(150deg);opacity:0}}
+#menstrual-cycle.sig-on .phase-quotes{animation:sigBloom 6s ease-in-out infinite alternate}
+@keyframes sigBloom{from{transform:scale(1)}to{transform:scale(1.008)}}
+/* JOURNAL — Warm page: breathing sage glow, sparkle motes, shimmer line */
+.sig-journalglow{width:400px;height:400px;top:-140px;left:-90px;background:radial-gradient(closest-side,rgba(150,205,160,.26),rgba(150,205,160,0) 72%)}
+.sig-on .sig-journalglow{animation:sigBreathe 9s ease-in-out infinite alternate}
+.sig-spark{position:absolute;width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,rgba(255,246,214,.95),rgba(255,246,214,0) 70%);opacity:0}
+.sig-on .sig-spark{animation:sigSpark 7s ease-in-out infinite}
+@keyframes sigSpark{0%,100%{opacity:0;transform:translateY(4px)}50%{opacity:.8;transform:translateY(-4px)}}
+#journal .section-head{position:relative}
+#journal .section-head::after{content:"";position:absolute;left:2px;bottom:-4px;width:160px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(150,205,160,0),rgba(150,205,160,.55),rgba(150,205,160,0));background-size:200% 100%;opacity:.35;pointer-events:none}
+#journal.sig-on .section-head::after{animation:sigShimmer 6s ease-in-out infinite alternate}
+@keyframes sigShimmer{from{background-position:0% 0;opacity:.3}to{background-position:100% 0;opacity:.65}}
+@media (prefers-reduced-motion: reduce){
+  .sig-layer,.sig-ripples{display:none !important}
+  #journal .section-head::after{display:none !important}
+  #menstrual-cycle .phase-quotes{animation:none !important}
+}
+/* ================================================================
+   3D GLASS PETAL SHARDS — a slow diagonal stream of faceted glass
+   petals (adapted from the iridescent shard-ribbon idea, translated
+   to wellness: blush, dawn gold, lavender, pearl — never rainbow
+   chrome). Each shard carries 2–3 gradient faces plus a bright facet
+   edge, tumbles gently (rotateX/rotateY) as it drifts, and its facet
+   sheen waxes as it turns, so it reads as real glass. The stream
+   lives in the mid-depth plane — inside the hero glass behind the
+   title, and in thin bands inside the Morning/Evening sig layers —
+   eases with scroll via the Light Garden lerp loop, and is gated
+   (.shard-on / .sig-on) so it pauses off-screen.
+   ================================================================ */
+.hero-copy{overflow:hidden}
+.hero-copy>*:not(.shard-stream){position:relative;z-index:1}
+.shard-stream{position:absolute;overflow:hidden;pointer-events:none;z-index:0;transform:rotate(-16deg);perspective:600px}
+.shard-stream.hero{inset:-14% -20%;opacity:.55}
+.shard-stream.band{inset:-30px -12% auto -12%;height:190px;opacity:.38}
+.shard-track{position:absolute;inset:0;will-change:transform}
+.shard{position:absolute;opacity:.5;will-change:transform;
+  clip-path:polygon(50% 0%,100% 36%,84% 100%,16% 100%,0% 36%);
+  filter:drop-shadow(0 5px 12px rgba(20,6,10,.35));
+  background:
+    linear-gradient(140deg, rgba(255,255,255,.65), rgba(255,255,255,0) 52%),
+    linear-gradient(205deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.18) 42%, rgba(90,60,120,.14) 58%, rgba(90,60,120,0) 82%),
+    linear-gradient(160deg, var(--f1), var(--f2));
+}
+.shard::before{content:"";position:absolute;inset:0;background:linear-gradient(112deg,transparent 44%,rgba(255,255,255,.55) 50%,transparent 56%);opacity:.3}
+.shard::after{content:"";position:absolute;inset:0;background:linear-gradient(24deg,transparent 55%,rgba(255,255,255,.28) 78%,transparent 96%);opacity:.28}
+.s-blush{--f1:rgba(244,169,188,.85);--f2:rgba(206,95,140,.55)}
+.s-gold{--f1:rgba(246,200,126,.85);--f2:rgba(217,138,60,.50)}
+.s-lav{--f1:rgba(196,176,240,.80);--f2:rgba(124,92,196,.50)}
+.s-pearl{--f1:rgba(255,243,228,.90);--f2:rgba(226,198,170,.55)}
+.shard-on .shard,.sig-on .shard{animation:shardFloat var(--d,17s) ease-in-out var(--dl,0s) infinite alternate}
+.shard-on .shard::before,.sig-on .shard::before{animation:shardSheen var(--d,17s) ease-in-out var(--dl,0s) infinite alternate}
+@keyframes shardFloat{
+  from{transform:translate3d(-26px,15px,0) rotate(-8deg) rotateX(14deg) rotateY(-18deg)}
+  to{transform:translate3d(40px,-24px,0) rotate(10deg) rotateX(-12deg) rotateY(20deg)}
+}
+@keyframes shardSheen{from{opacity:.16}to{opacity:.62}}
+@media (prefers-reduced-motion: reduce){
+  .shard-stream{display:none !important}
+  .shard{animation:none !important}
+}
 </style>
 </head>
 <body>
@@ -2489,6 +2823,7 @@ document.getElementById('sleptNo').addEventListener('click', function(){
   if(dayCard) els.push(dayCard);
   Array.prototype.forEach.call(document.querySelectorAll('#morning .session-card'), function(el){ els.push(el); });
   els.forEach(function(el){
+    el.classList.add('tilt3d'); /* LIGHT GARDEN — arms the specular-streak layer (CSS) */
     var raf = 0, active = false, pressing = false;
     var tx = 0, ty = 0, cx = 0, cy = 0, lastMove = 0;
     function render(){
@@ -2511,6 +2846,10 @@ document.getElementById('sleptNo').addEventListener('click', function(){
       var py = (e.clientY - r.top) / r.height - 0.5;
       tx = px * 2 * MAX;
       ty = -py * 2 * MAX;
+      /* LIGHT GARDEN — the specular streak tracks the same cursor point as the tilt */
+      el.style.setProperty('--gx', (px * 100 + 50).toFixed(1));
+      el.style.setProperty('--gy', (py * 100 + 50).toFixed(1));
+      el.style.setProperty('--glare', '1');
       active = true;
       lastMove = Date.now();
       start();
@@ -2519,9 +2858,360 @@ document.getElementById('sleptNo').addEventListener('click', function(){
       pressing = true; active = false; tx = 0; ty = 0; cx = 0; cy = 0;
       if(raf){ cancelAnimationFrame(raf); raf = 0; }
       el.style.transform = '';
+      el.style.setProperty('--glare', '0');
     });
     window.addEventListener('pointerup', function(){ pressing = false; }, { passive: true });
-    el.addEventListener('pointerleave', function(){ active = false; tx = 0; ty = 0; start(); });
+    el.addEventListener('pointerleave', function(){ active = false; tx = 0; ty = 0; el.style.setProperty('--glare', '0'); start(); });
+  });
+})();
+</script>
+<script>
+/* THE LIGHT GARDEN — breathing key-light, drifting motes, heading rises.
+   One warm key-light lives behind the glass; as you scroll, its colour lerps
+   toward the section at the centre of the screen — dawn gold at Morning,
+   ember at Evening, aqua at Water, moon lavender at Sleep, rose at
+   Menstrual, sage at Journal — so the page tells its story through light
+   alone. A few dozen tiny motes (petal pink, ember gold) drift slowly
+   upward on their own parallax depths between the light and the content.
+   Section headings rise 6px + fade once as they enter. Everything here is
+   decoration layered over a complete page: reduced-motion (or no JS)
+   leaves the page static and fully visible, and the loop does no work
+   while the tab is hidden. */
+(function(){
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+
+  /* Animated aurora ribbons — created even under reduced-motion, where the CSS
+     media query freezes them into a static soft gradient behind the glass. */
+  var ribbons = document.createElement('div');
+  ribbons.className = 'lg-ribbons';
+  ribbons.setAttribute('aria-hidden', 'true');
+  ['lg-ribbon-a', 'lg-ribbon-b', 'lg-ribbon-c'].forEach(function(cls){
+    var r = document.createElement('div');
+    r.className = 'lg-ribbon ' + cls;
+    ribbons.appendChild(r);
+  });
+  document.body.insertBefore(ribbons, document.body.firstChild);
+
+  if(mq && mq.matches) return;
+  if(!('requestAnimationFrame' in window)) return;
+
+  /* Heading rises — one-time, with the same safety pattern as the reveal script */
+  var heads = Array.prototype.slice.call(document.querySelectorAll('.section-head'));
+  heads.forEach(function(h){ h.classList.add('lg-head'); });
+  function headIn(h){ h.classList.add('lg-in'); }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ io.unobserve(en.target); headIn(en.target); } });
+    }, { threshold: 0.2 });
+    heads.forEach(function(h){ io.observe(h); });
+  } else {
+    heads.forEach(headIn);
+  }
+  function sweepHeads(){
+    heads.forEach(function(h){
+      if(!h.classList.contains('lg-in') && h.getBoundingClientRect().top < window.innerHeight * 0.95) headIn(h);
+    });
+  }
+  window.addEventListener('scroll', sweepHeads, { passive: true });
+  window.addEventListener('load', sweepHeads);
+  setTimeout(function(){ heads.forEach(headIn); }, 2000);
+
+  /* The key-light and its per-section colours */
+  var key = document.createElement('div');
+  key.className = 'lg-key';
+  key.setAttribute('aria-hidden', 'true');
+  document.body.insertBefore(key, document.body.firstChild);
+  var spots = [
+    { el: document.querySelector('.hero-copy'),          c: [246, 190, 110] },
+    { el: document.getElementById('morning'),             c: [246, 183,  90] },
+    { el: document.getElementById('evening-gym'),         c: [232, 120,  74] },
+    { el: document.getElementById('hydration'),           c: [110, 196, 205] },
+    { el: document.getElementById('sleep-cycle'),         c: [178, 156, 226] },
+    { el: document.getElementById('menstrual-cycle'),     c: [238, 130, 150] },
+    { el: document.getElementById('journal'),             c: [150, 205, 160] }
+  ].filter(function(s){ return !!s.el; });
+  var cur = [246, 190, 110], tgt = [246, 190, 110];
+  function pickTarget(){
+    var mid = (window.innerHeight || 800) * 0.5, best = spots[0], bestD = Infinity;
+    spots.forEach(function(s){
+      var r = s.el.getBoundingClientRect();
+      var d = Math.abs((r.top + r.height / 2) - mid);
+      if(r.top <= mid && r.bottom >= mid) d = 0;
+      if(d < bestD){ bestD = d; best = s; }
+    });
+    tgt = best.c;
+  }
+
+  /* Motes — capped count, fewer on small screens; transform-only updates */
+  var motesWrap = document.createElement('div');
+  motesWrap.className = 'lg-motes';
+  motesWrap.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(motesWrap);
+  var N = window.innerWidth < 700 ? 16 : 26;
+  var motes = [];
+  for(var i = 0; i < N; i++){
+    var m = document.createElement('div');
+    m.className = 'lg-mote' + (i % 2 ? ' pink' : '');
+    var size = 3 + Math.random() * 5;
+    m.style.width = size.toFixed(1) + 'px';
+    m.style.height = size.toFixed(1) + 'px';
+    m.style.opacity = (0.25 + Math.random() * 0.4).toFixed(2);
+    motesWrap.appendChild(m);
+    motes.push({
+      el: m,
+      x: Math.random() * 100,          /* vw % */
+      y: Math.random() * 100,          /* vh % */
+      s: 1.6 + Math.random() * 3.2,    /* upward drift speed */
+      ph: Math.random() * 6.28,        /* sway phase */
+      sw: 0.4 + Math.random() * 0.9,   /* sway rate */
+      dep: 0.3 + Math.random() * 0.7   /* parallax depth */
+    });
+  }
+
+  var last = 0, lastSy = -1;
+  function frame(ts){
+    if(document.hidden){ last = 0; requestAnimationFrame(frame); return; }
+    var dt = last ? Math.min((ts - last) / 1000, 0.05) : 0.016;
+    last = ts;
+    var sy = window.scrollY || window.pageYOffset || 0;
+    if(sy !== lastSy){ pickTarget(); lastSy = sy; }
+    var moved = false;
+    for(var k = 0; k < 3; k++){
+      var nc = cur[k] + (tgt[k] - cur[k]) * 0.045;
+      if(Math.abs(nc - cur[k]) > 0.05) moved = true;
+      cur[k] = nc;
+    }
+    if(moved || sy !== lastSy){
+      var klv = Math.round(cur[0]) + ',' + Math.round(cur[1]) + ',' + Math.round(cur[2]);
+      key.style.setProperty('--kl', klv);
+      ribbons.style.setProperty('--kl', klv); /* the lavender ribbon breathes with the key-light */
+    }
+    var W = window.innerWidth, H = window.innerHeight;
+    for(var j = 0; j < motes.length; j++){
+      var mo = motes[j];
+      mo.y -= mo.s * dt * 0.14;
+      if(mo.y < -3){ mo.y = 103; mo.x = Math.random() * 100; }
+      var px = (mo.x / 100) * W + Math.sin(ts * 0.00022 * mo.sw + mo.ph) * 14 * mo.dep;
+      var py = (mo.y / 100) * H + ((sy * 0.05 * mo.dep) % (H + 80));
+      if(py > H + 40) py -= (H + 80);
+      mo.el.style.transform = 'translate3d(' + px.toFixed(1) + 'px,' + py.toFixed(1) + 'px,0)';
+    }
+    /* Glass shard streams (registered by the shards script) ease with the scroll
+       on this same lerp: each track drifts a few dozen pixels against its host's
+       progress through the viewport, and is skipped while off-screen. */
+    var sts = window.__lgShardStreams;
+    if(sts){
+      for(var q = 0; q < sts.length; q++){
+        var st = sts[q];
+        var hr = st.host.getBoundingClientRect();
+        if(hr.bottom < -80 || hr.top > H + 80) continue;
+        var hp = (H - hr.top) / (H + hr.height);
+        hp = hp < 0 ? 0 : (hp > 1 ? 1 : hp);
+        st.cur += ((hp - 0.5) * -42 - st.cur) * 0.05;
+        st.el.style.transform = 'translate3d(' + st.cur.toFixed(1) + 'px,' + (st.cur * -0.28).toFixed(1) + 'px,0)';
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  if(mq && mq.addEventListener){
+    mq.addEventListener('change', function(){
+      if(mq.matches){ /* reduced motion switched on mid-session: strip the decoration */
+        if(motesWrap.parentNode) motesWrap.parentNode.removeChild(motesWrap);
+        if(key.parentNode) key.parentNode.removeChild(key);
+        heads.forEach(function(h){ h.classList.remove('lg-head'); h.classList.add('lg-in'); });
+      }
+    });
+  }
+})();
+</script>
+<script>
+/* SECTION SIGNATURES — each section gets its own soft living-light animation:
+   Morning a breathing sunrise with fanning rays and gold motes, Evening a
+   gentle ember flicker with rising embers, Water slow ripples behind the
+   countdown over a wave shimmer, Sleep a breathing moon-glow with twinkling
+   stars, Menstrual drifting CSS rose petals with a bloom pulse, Journal a
+   breathing sage warmth with sparkles and a shimmer line. Every layer sits
+   behind its section's content, clipped to the section's bounds, and its
+   keyframes run only while IntersectionObserver marks the section .sig-on —
+   off-screen sections are fully paused, and under prefers-reduced-motion
+   nothing is created at all. Pure decoration: no JS, no layers, same page. */
+(function(){
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  if(mq && mq.matches) return;
+  function layer(host){
+    var d = document.createElement('div');
+    d.className = 'sig-layer';
+    d.setAttribute('aria-hidden', 'true');
+    host.insertBefore(d, host.firstChild);
+    host.classList.add('sig-host');
+    return d;
+  }
+  function add(parent, cls, styles){
+    var d = document.createElement('div');
+    d.className = cls;
+    if(styles) for(var k in styles) d.style[k] = styles[k];
+    parent.appendChild(d);
+    return d;
+  }
+  var hosts = [];
+  function reg(el){ if(el) hosts.push(el); }
+
+  /* MORNING — Sunrise */
+  var morning = document.getElementById('morning');
+  if(morning){
+    var ml = layer(morning);
+    add(ml, 'sig-glow sig-sun');
+    ['r1', 'r2', 'r3'].forEach(function(r){ add(ml, 'sig-ray ' + r); });
+    [[16, 20], [44, 46], [70, 68]].forEach(function(p, i){
+      add(ml, 'sig-mote gold', { left: p[0] + '%', top: p[1] + '%', width: '6px', height: '6px',
+        animationDelay: (i * 3.7) + 's', animationDuration: (11 + i * 2) + 's' });
+    });
+    reg(morning);
+  }
+
+  /* EVENING — Ember glow */
+  var evening = document.getElementById('evening-gym');
+  if(evening){
+    var el = layer(evening);
+    add(el, 'sig-glow sig-emberglow');
+    [[12, 30], [55, 58], [84, 82]].forEach(function(p, i){
+      add(el, 'sig-mote ember', { left: p[0] + '%', top: p[1] + '%', width: '5px', height: '5px',
+        animationDelay: (i * 4.1) + 's', animationDuration: (10 + i * 2.5) + 's' });
+    });
+    reg(evening);
+  }
+
+  /* WATER — Ripples + wave shimmer */
+  var hyd = document.getElementById('hydration');
+  if(hyd){
+    var hl = layer(hyd);
+    add(hl, 'sig-wave');
+    var card = document.getElementById('waterCard');
+    var wc = document.getElementById('waterCountdown');
+    if(card && wc){
+      var rp = document.createElement('div');
+      rp.className = 'sig-ripples';
+      rp.setAttribute('aria-hidden', 'true');
+      card.insertBefore(rp, card.firstChild);
+      var r1 = add(rp, 'sig-ring');
+      var r2 = add(rp, 'sig-ring r2');
+      var place = function(){
+        var cy = wc.offsetTop + wc.offsetHeight / 2;
+        r1.style.top = cy + 'px';
+        r2.style.top = cy + 'px';
+      };
+      place();
+      window.addEventListener('resize', place, { passive: true });
+      window.addEventListener('load', place);
+    }
+    reg(hyd);
+  }
+
+  /* SLEEP — Moonlight */
+  var sleep = document.getElementById('sleep-cycle');
+  if(sleep){
+    var sl = layer(sleep);
+    add(sl, 'sig-glow sig-moon');
+    [[8, 18], [22, 64], [38, 30], [52, 78], [63, 14], [74, 52], [86, 26], [93, 70], [30, 88], [58, 44]].forEach(function(p, i){
+      add(sl, 'sig-star', { left: p[0] + '%', top: p[1] + '%',
+        animationDelay: (i * 0.7) + 's', animationDuration: (4 + (i % 4)) + 's' });
+    });
+    reg(sleep);
+  }
+
+  /* MENSTRUAL — Petal drift */
+  var mens = document.getElementById('menstrual-cycle');
+  if(mens){
+    var pl = layer(mens);
+    [6, 26, 48, 70, 88].forEach(function(x, i){
+      add(pl, 'sig-petal', { left: x + '%', top: (2 + (i % 3) * 2) + '%',
+        animationDelay: (i * 3) + 's', animationDuration: (14 + i * 1.3) + 's' });
+    });
+    reg(mens);
+  }
+
+  /* JOURNAL — Warm page */
+  var journal = document.getElementById('journal');
+  if(journal){
+    var jl = layer(journal);
+    add(jl, 'sig-glow sig-journalglow');
+    [[20, 24], [58, 60], [82, 36]].forEach(function(p, i){
+      add(jl, 'sig-spark', { left: p[0] + '%', top: p[1] + '%', animationDelay: (i * 2.3) + 's' });
+    });
+    reg(journal);
+  }
+
+  /* Gate every signature on visibility — off-screen means fully paused */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.target.classList.toggle('sig-on', en.isIntersecting); });
+    }, { rootMargin: '80px 0px' });
+    hosts.forEach(function(h){ io.observe(h); });
+  } else {
+    hosts.forEach(function(h){ h.classList.add('sig-on'); });
+  }
+})();
+</script>
+<script>
+/* 3D GLASS PETAL SHARDS — builds the faceted shard streams: a full stream
+   inside the hero glass behind the title, and a thin, quieter band inside
+   the Morning and Evening signature layers. Shards drift and tumble on CSS
+   keyframes (gated by .shard-on / .sig-on so they pause off-screen), their
+   tracks ease with scroll through the Light Garden lerp loop
+   (window.__lgShardStreams), and under prefers-reduced-motion nothing is
+   built at all — the page is complete without a single shard. */
+(function(){
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  if(mq && mq.matches) return;
+  window.__lgShardStreams = window.__lgShardStreams || [];
+  var COLORS = ['s-blush', 's-gold', 's-lav', 's-pearl'];
+
+  function buildStream(host, cls, count, minS, maxS){
+    var stream = document.createElement('div');
+    stream.className = 'shard-stream ' + cls;
+    stream.setAttribute('aria-hidden', 'true');
+    var track = document.createElement('div');
+    track.className = 'shard-track';
+    stream.appendChild(track);
+    for(var i = 0; i < count; i++){
+      var sh = document.createElement('div');
+      var size = minS + Math.random() * (maxS - minS);
+      sh.className = 'shard ' + COLORS[i % COLORS.length];
+      sh.style.left = (3 + Math.random() * 90) + '%';
+      sh.style.top = (6 + Math.random() * 80) + '%';
+      sh.style.width = size.toFixed(0) + 'px';
+      sh.style.height = (size * 1.18).toFixed(0) + 'px';
+      sh.style.setProperty('--d', (14 + Math.random() * 9).toFixed(1) + 's');
+      sh.style.setProperty('--dl', (-Math.random() * 16).toFixed(1) + 's');
+      track.appendChild(sh);
+    }
+    host.insertBefore(stream, host.firstChild);
+    window.__lgShardStreams.push({ host: host, el: track, cur: 0 });
+    return stream;
+  }
+
+  /* HERO — the full stream behind the title, inside the hero glass */
+  var hero = document.querySelector('.hero-copy');
+  if(hero){
+    buildStream(hero, 'hero', 12, 16, 42);
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ hero.classList.toggle('shard-on', en.isIntersecting); });
+      }, { rootMargin: '60px 0px' });
+      io.observe(hero);
+    } else {
+      hero.classList.add('shard-on');
+    }
+  }
+
+  /* MORNING + EVENING — thin bands inside their signature layers */
+  ['morning', 'evening-gym'].forEach(function(id){
+    var sec = document.getElementById(id);
+    if(!sec) return;
+    var sigLayer = sec.querySelector('.sig-layer');
+    if(sigLayer) buildStream(sigLayer, 'band', 6, 10, 24);
   });
 })();
 </script>
