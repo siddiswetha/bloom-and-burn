@@ -716,6 +716,34 @@ main.wrap{
 /* ABOUT + BACKUP — quiet block at the very bottom, above the footer line */
 #about-project h2{font-size:clamp(1.6rem,3vw,2.2rem)}
 #about-project p{color:var(--muted);margin:0 0 12px;max-width:640px}
+/* TAB LETTERS — dark black text on every tab and pill label (her order):
+   header nav pills, Morning + Evening Day 1–7 tabs, Journal/Notes sub-tabs
+   and the section time pills. Each tab keeps its colour identity as a pale
+   tint fill; the active tab still stands out with a slightly deeper tint
+   plus a stronger coloured border — never a dark fill behind the black
+   letters. Text and fill colours only; nothing else changes. */
+.navlinks a{color:#111111}
+.navlinks a.morning-link{background:linear-gradient(135deg,#FAD9A3,#F8C9D6);color:#111111;border-color:#E8A33D}
+.navlinks a.evening-link{background:linear-gradient(135deg,#F9C6A8,#F0BCD4);color:#111111;border-color:#D8739E}
+.navlinks a.blue{background:linear-gradient(135deg,#C4E0F6,#A9D2F2);color:#111111;border-color:#5EA9DD}
+.navlinks a.sleep-link{background:linear-gradient(135deg,#DCD0F8,#C9B6F2);color:#111111;border-color:#9D80DE}
+.navlinks a.menstrual-link{background:linear-gradient(135deg,#F9CBD4,#F4A9BC);color:#111111;border-color:#E86A82}
+.navlinks a.journal-link{background:linear-gradient(135deg,#D2EDD9,#BFE3C8);color:#111111;border-color:#6FAE7E}
+.day-tab{background:rgba(255,255,255,.92);color:#111111;border-color:rgba(255,255,255,.65)}
+.day-tab.active{background:#FFFFFF;color:#111111;border-color:#111111}
+.morning-day-tab.active{background:linear-gradient(135deg,#FBDCA6,#F9C9D6);color:#111111;border:2px solid #E8930C}
+#evening-gym .day-tab.active{background:linear-gradient(135deg,#F9C6A8,#F0BCD4);color:#111111;border:2px solid #C94F6D}
+.journal-tab{background:rgba(255,255,255,.92);color:#111111;border-color:rgba(255,255,255,.65)}
+.journal-tab.active{background:linear-gradient(135deg,#D2EDD9,#A9D8B4);color:#111111;border:2px solid #3E7C4F}
+.journal-tab.notes-tab.active{background:linear-gradient(135deg,#FBEFC0,#F6D68A);color:#111111;border:2px solid #C98F12}
+.pill{background:rgba(255,255,255,.92);color:#111111}
+.pill.blue{background:#DCEFFA;color:#111111}
+.morning-pill{background:linear-gradient(135deg,#FBDCA6,#F9C9D6);color:#111111}
+.evening-pill{background:linear-gradient(135deg,#F9C6A8,#F0BCD4);color:#111111}
+#evening-gym .pill{background:#FBE3EC;color:#111111}
+#sleep-cycle .pill{background:#EDE9FE;color:#111111}
+.sleep-goal{background:#EDE9FE;color:#111111}
+.water-goal{color:#111111}
 </style>
 </head>
 <body>
