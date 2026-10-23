@@ -1267,6 +1267,46 @@ main h3{font-size:1.25rem}
   .shard-stream{display:none !important}
   .shard{animation:none !important}
 }
+/* ================================================================
+   SIX STUDY ADAPTATIONS — cursor warm glow (Incredibles/Haoqi),
+   scrollspy nav glow (TWOMUCH), chapter eyebrows (Shopify Editions
+   chapters), today-at-a-glance strip (Haoqi telemetry + Funtech
+   counters), rolling-label buttons (Incredibles), sleep moon
+   (HTWKR). Visual / read-only layer only: no content, wording,
+   storage key or behaviour changes anywhere.
+   ================================================================ */
+/* 1) Cursor warm glow — fixed layer painted by the script; transform/opacity only */
+.lg-cursor{position:fixed;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;pointer-events:none;z-index:3;opacity:0;mix-blend-mode:screen;will-change:transform,opacity;
+  background:radial-gradient(circle,rgba(255,198,116,.17) 0%,rgba(255,176,102,.08) 42%,rgba(255,176,102,0) 68%)}
+/* 2) Scrollspy — warm glow state for the on-screen section's nav pill; black letters stay */
+.navlinks a.spy-on{border-color:#FFC978;box-shadow:0 0 0 2px rgba(255,201,120,.45),0 0 16px rgba(255,186,105,.55),0 8px 18px rgba(8,3,2,.35);filter:brightness(1.05) saturate(1.15)}
+/* 3) Chapter eyebrows — small Manrope lines above each section heading */
+.chapter-eyebrow{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.17em;line-height:1.3;margin:0 0 3px;opacity:.9}
+.eb-morning{color:#EFC27E}.eb-evening{color:#F2A184}.eb-water{color:#9AD8D2}
+.eb-sleep{color:#C3B2EA}.eb-menstrual{color:#F0A0AE}.eb-journal{color:#A9D3AE}
+/* 4) Today at a glance — one slim glass strip under the hero */
+.glance-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 10px;margin:10px 0 2px;padding:9px 14px;border-radius:18px;
+  background:linear-gradient(155deg,rgba(255,246,236,.055),rgba(255,246,236,.016) 55%,rgba(30,18,14,.05));
+  border:1px solid rgba(255,240,226,.14);
+  box-shadow:inset 0 1px 0 rgba(255,246,232,.16),5px 8px 20px rgba(8,3,2,.30);
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#D8C8B8}
+.glance-item{white-space:nowrap}
+.glance-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,205,150,.55);flex:none}
+/* 5) Rolling-label buttons — the label rolls up on desktop hover, a duplicate rolls in */
+.roll{display:block;height:1.5em;overflow:hidden}
+.roll-line{display:block;line-height:1.5;transition:transform .25s ease}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion: no-preference){
+  .roll-btn:hover .roll-line{transform:translateY(-1.5em)}
+}
+@media (prefers-reduced-motion: reduce){ .roll-line{transition:none} }
+/* 6) Sleep moon — pure-CSS crescent beside the Sleep Cycle heading */
+.sleep-moon{position:relative;flex:none;width:38px;height:38px;margin-left:12px;border-radius:50%;
+  background:radial-gradient(circle,rgba(183,156,255,.22),rgba(183,156,255,0) 70%);
+  animation:moonFloat 7s ease-in-out infinite alternate}
+.sleep-moon::before{content:"";position:absolute;left:5px;top:4px;width:24px;height:24px;border-radius:50%;
+  box-shadow:6px 3px 0 0 #EBDCF7;transform:rotate(-20deg)}
+@keyframes moonFloat{from{transform:translateY(2px)}to{transform:translateY(-3px)}}
+@media (prefers-reduced-motion: reduce){ .sleep-moon{animation:none} }
 </style>
 </head>
 <body>
@@ -1301,8 +1341,19 @@ main h3{font-size:1.25rem}
 <div class="energy-dots" id="energyDots" aria-hidden="true"></div>
 </div>
 
+<!-- TODAY AT A GLANCE — slim read-only strip: live clock plus today's Water, Sleep and Cycle, read from the same stores the sections use -->
+<div class="glance-strip" id="glanceStrip" aria-label="Today at a glance">
+<span class="glance-item" id="glanceClock">—</span>
+<span class="glance-dot" aria-hidden="true"></span>
+<span class="glance-item" id="glanceWater">Water · not logged yet</span>
+<span class="glance-dot" aria-hidden="true"></span>
+<span class="glance-item" id="glanceSleep">Sleep · 9 PM to 5 AM</span>
+<span class="glance-dot" aria-hidden="true"></span>
+<span class="glance-item" id="glanceCycle">Cycle · not marked yet</span>
+</div>
+
 <!-- MORNING MIZI -->
-<section id="morning"><div class="section-head"><div><h2>Morning</h2><span class="pill morning-pill" style="margin-top:8px">5 AM to 7 AM</span></div></div>
+<section id="morning"><div class="section-head"><div><div class="chapter-eyebrow eb-morning">01 — MORNING</div><h2>Morning</h2><span class="pill morning-pill" style="margin-top:8px">5 AM to 7 AM</span></div></div>
 
 <div class="card" style="border:2px solid #F2A93B;margin-bottom:10px"><h3 style="font-size:1.3rem">My Goal: Slim + Muscular</h3><p style="color:var(--muted);margin:4px 0 0">Lean, toned and strong — not bulky. That's exactly what this plan (and the new daily target add-ons below) is built for:</p><ul style="margin:6px 0 0;padding-left:20px;color:var(--muted)"><li><strong style="color:var(--ink)">Build the muscle:</strong> the dumbbell &amp; strength sessions — plus each day's new target add-on — shape toned arms, legs, stomach and upper body.</li><li><strong style="color:var(--ink)">Feed the muscle:</strong> protein at every meal helps you build and keep lean muscle while you lose fat.</li><li><strong style="color:var(--ink)">Stay slim:</strong> the moderate 300–500 calorie deficit plus daily cardio burns the fat while the strength work keeps you firm.</li></ul></div>
 
@@ -1391,7 +1442,7 @@ main h3{font-size:1.25rem}
 </div>
 </section>
 <!-- EVENING -->
-<section id="evening-gym"><div class="section-head"><div><h2>Evening</h2><span class="pill evening-pill" style="margin-top:8px">4 PM to 6 PM</span></div></div>
+<section id="evening-gym"><div class="section-head"><div><div class="chapter-eyebrow eb-evening">02 — EVENING</div><h2>Evening</h2><span class="pill evening-pill" style="margin-top:8px">4 PM to 6 PM</span></div></div>
 <div style="margin-bottom:12px">
 <div class="kicker" style="margin-bottom:8px">Warm-Up — Every Day, Before Your Exercises • 10 Minutes</div>
 <div class="warm-grid">
@@ -1443,6 +1494,7 @@ main h3{font-size:1.25rem}
 
 <!-- WATER -->
 <section id="hydration"><div class="hydration" id="waterCard" style="cursor:pointer">
+<div class="chapter-eyebrow eb-water">03 — WATER</div>
 <h2>Water</h2>
 <div class="water-goal" id="waterGoalLabel">2L to 3L</div>
 <div class="water-count" id="waterCountdown">--:--:--</div>
@@ -1460,12 +1512,12 @@ main h3{font-size:1.25rem}
 </div>
 
 <!-- SLEEP CYCLE -->
-<section id="sleep-cycle"><div class="section-head"><div><div class="kicker">Rest • Recover • Glow</div><h2>Sleep Cycle</h2></div></div>
+<section id="sleep-cycle"><div class="section-head"><div><div class="chapter-eyebrow eb-sleep">04 — SLEEP CYCLE</div><div class="kicker">Rest • Recover • Glow</div><h2>Sleep Cycle</h2></div><span class="sleep-moon" aria-hidden="true"></span></div>
 <p class="sleep-hint">Tap 'Sleep Cycle' to open your sleep log</p>
 <div class="card" style="text-align:center">
 <span class="pill" style="font-size:1rem;padding:10px 18px">9 PM to 5 AM — 8 hours</span>
 <p style="font-weight:800;margin:14px 0 8px">Last night:</p>
-<div class="timer-btns"><button class="btn btn-burn" id="sleptYes" type="button">I slept</button><button class="btn btn-outline" id="sleptNo" type="button">I didn't sleep</button></div>
+<div class="timer-btns"><button class="btn btn-burn roll-btn" id="sleptYes" type="button"><span class="roll"><span class="roll-line">I slept</span><span class="roll-line" aria-hidden="true">I slept</span></span></button><button class="btn btn-outline roll-btn" id="sleptNo" type="button"><span class="roll"><span class="roll-line">I didn't sleep</span><span class="roll-line" aria-hidden="true">I didn't sleep</span></span></button></div>
 <p id="sleepMsg" style="display:none;font-weight:800;font-size:1.3rem;line-height:1.35;margin:14px 0 0"></p>
 </div></section>
 
@@ -1485,7 +1537,7 @@ main h3{font-size:1.25rem}
 </div>
 
 <!-- MENSTRUAL CYCLE -->
-<section id="menstrual-cycle"><div class="section-head"><div><div class="kicker">Your Cycle • Mark Your Days</div><h2>Menstrual Cycle</h2></div></div>
+<section id="menstrual-cycle"><div class="section-head"><div><div class="chapter-eyebrow eb-menstrual">05 — MENSTRUAL CYCLE</div><div class="kicker">Your Cycle • Mark Your Days</div><h2>Menstrual Cycle</h2></div></div>
 <div class="cycle-card">
 <div class="cycle-head"><button class="cycle-arrow" id="cyclePrev" aria-label="Previous month">‹</button><div class="cycle-title" id="cycleTitle"></div><button class="cycle-arrow" id="cycleNext" aria-label="Next month">›</button></div>
 <div class="cycle-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
@@ -1500,7 +1552,7 @@ main h3{font-size:1.25rem}
 </div></section>
 
 <!-- JOURNAL — permanent editable plan pages -->
-<section id="journal"><div class="section-head"><div><div class="kicker">Speak Your Plan</div><h2>Journal</h2></div></div>
+<section id="journal"><div class="section-head"><div><div class="chapter-eyebrow eb-journal">06 — JOURNAL</div><div class="kicker">Speak Your Plan</div><h2>Journal</h2></div></div>
 <div class="journal-tabs" role="tablist" aria-label="Journal views">
 <button type="button" class="journal-tab active" id="journalTabPage" role="tab" aria-selected="true">Journal</button>
 <button type="button" class="journal-tab notes-tab" id="journalTabNotes" role="tab" aria-selected="false">Notes</button>
@@ -1567,7 +1619,7 @@ main h3{font-size:1.25rem}
 <!-- ABOUT + BACKUP — designed-and-built note and a read-only download of everything this browser stores for the site -->
 <section id="about-project"><div class="section-head"><div><h2>About this project</h2></div></div>
 <p>Bloom &amp; Burn was designed and built by Siddi (@swethaasiddi) entirely with AI — prompt engineering, UX design and iterative QA testing. No hand-written code.</p>
-<button type="button" class="btn btn-outline" id="backupBtn">Download my backup</button>
+<button type="button" class="btn btn-outline roll-btn" id="backupBtn"><span class="roll"><span class="roll-line">Download my backup</span><span class="roll-line" aria-hidden="true">Download my backup</span></span></button>
 </section>
 
 <footer><p style="border-top:1px solid var(--line);padding-top:10px;text-align:center;font-weight:700;color:var(--bloom)">@swethaasiddi</p></footer>
@@ -1913,6 +1965,7 @@ document.getElementById('cycleGrid').addEventListener('click', function(e){
   if(cycleMarked.has(key)) cycleMarked.delete(key); else cycleMarked.add(key);
   saveCycleMarks();
   renderCycle();
+  window.dispatchEvent(new Event('bb-glance'));
   setPhaseQuotes(phaseKeyForDate(y, m, d));
 });
 document.getElementById('cyclePrev').addEventListener('click', function(){ cycleView.setMonth(cycleView.getMonth() - 1); renderCycle(); });
@@ -2303,6 +2356,7 @@ document.getElementById('sleptNo').addEventListener('click', function(){
           saveTimes(arr);
           updateProgress();
           renderLog();
+          window.dispatchEvent(new Event('bb-glance'));
         });
         grid.appendChild(b);
       });
@@ -2407,6 +2461,7 @@ document.getElementById('sleptNo').addEventListener('click', function(){
     if(!entry.slept && !entry.woke) delete log[today]; else log[today] = entry;
     saveLog(log);
     renderLog();
+    window.dispatchEvent(new Event('bb-glance'));
   }
   sleptBtn.addEventListener('click', function(){ toggle('slept'); });
   wokeBtn.addEventListener('click', function(){ toggle('woke'); });
@@ -3213,6 +3268,140 @@ document.getElementById('sleptNo').addEventListener('click', function(){
     var sigLayer = sec.querySelector('.sig-layer');
     if(sigLayer) buildStream(sigLayer, 'band', 6, 10, 24);
   });
+})();
+</script>
+<script>
+/* SIX STUDY ADAPTATIONS — cursor warm glow, scrollspy nav, today-at-a-glance
+   strip. (Chapter eyebrows, rolling labels and the sleep moon are markup +
+   CSS.) Everything here is decoration or read-only: the strip only READS the
+   existing stores — bb-water-drank, bb-sleep-log, and bb-cycle-marks through
+   the page's own cycle helpers — and never writes; the page's own tick
+   handlers announce changes with a 'bb-glance' event. */
+(function(){
+  var mqR = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var reduced = !!(mqR && mqR.matches);
+
+  /* 1) CURSOR WARM GLOW — pointer-fine devices only, never on touch, off under
+     reduced-motion. A soft amber pool trailing the mouse with lerped lag on
+     its own rAF loop; the loop idles as soon as the glow settles or fades,
+     and an idle check fades it out after a few still seconds. */
+  var mqF = window.matchMedia ? window.matchMedia('(pointer: fine)') : null;
+  if(!reduced && mqF && mqF.matches && 'requestAnimationFrame' in window){
+    var glow = document.createElement('div');
+    glow.className = 'lg-cursor';
+    glow.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(glow);
+    var tx = -500, ty = -500, cx = -500, cy = -500, op = 0, lastMove = 0, raf = 0;
+    function glowFrame(){
+      cx += (tx - cx) * 0.085;
+      cy += (ty - cy) * 0.085;
+      var target = (performance.now() - lastMove < 2600) ? 1 : 0;
+      op += (target - op) * 0.055;
+      glow.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
+      glow.style.opacity = op.toFixed(3);
+      var settled = Math.abs(tx - cx) < 0.4 && Math.abs(ty - cy) < 0.4 && Math.abs(target - op) < 0.012;
+      if(!settled && !document.hidden){ raf = requestAnimationFrame(glowFrame); }
+      else { raf = 0; if(target === 0) glow.style.opacity = '0'; }
+    }
+    function glowKick(){ if(!raf && !document.hidden) raf = requestAnimationFrame(glowFrame); }
+    window.addEventListener('pointermove', function(e){
+      if(e.pointerType && e.pointerType !== 'mouse') return;
+      tx = e.clientX; ty = e.clientY; lastMove = performance.now();
+      glowKick();
+    }, { passive: true });
+    document.addEventListener('pointerleave', function(){ lastMove = 0; glowKick(); });
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) glowKick(); });
+    setInterval(function(){ if(lastMove && performance.now() - lastMove >= 2600) glowKick(); }, 1500);
+  }
+
+  /* 2) SCROLLSPY NAV — the header stays fully static and non-sticky; as a
+     section crosses the middle band of the screen its nav pill takes the
+     warm glow state and the previous pill returns to normal. Pill taps are
+     the same plain anchors as before. */
+  if('IntersectionObserver' in window){
+    var spyMap = {};
+    Array.prototype.forEach.call(document.querySelectorAll('.navlinks a'), function(a){
+      var href = a.getAttribute('href') || '';
+      if(href.charAt(0) === '#') spyMap[href.slice(1)] = a;
+    });
+    var spyCurrent = null;
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var link = spyMap[en.target.id];
+        if(!link || link === spyCurrent) return;
+        if(spyCurrent) spyCurrent.classList.remove('spy-on');
+        spyCurrent = link;
+        spyCurrent.classList.add('spy-on');
+      });
+    }, { rootMargin: '-38% 0px -55% 0px', threshold: 0 });
+    ['morning', 'evening-gym', 'hydration', 'sleep-cycle', 'menstrual-cycle', 'journal'].forEach(function(id){
+      var s = document.getElementById(id);
+      if(s && spyMap[id]) spy.observe(s);
+    });
+  }
+
+  /* 4) TODAY AT A GLANCE — read-only: a live local clock, today's Water from
+     bb-water-drank in the same glasses/litres the Water section uses,
+     Sleep from bb-sleep-log, and the Cycle from the page's own phase
+     engine over bb-cycle-marks. Recomputes every 30 seconds and whenever
+     the page's own log ticks announce a change. */
+  var gClock = document.getElementById('glanceClock');
+  var gWater = document.getElementById('glanceWater');
+  var gSleep = document.getElementById('glanceSleep');
+  var gCycle = document.getElementById('glanceCycle');
+  if(gClock && gWater && gSleep && gCycle){
+    function pad2(n){ return String(n).padStart(2, '0'); }
+    function dayKey(d){ return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+    /* Same rows as the Water Log: the Wake up row counts 2 glasses, the rest 1 — 8 glasses a day */
+    var WATER_SLOTS = { 'wakeup': 2, 'shower': 1, 'before-breakfast': 1, 'before-lunch': 1, 'before-dinner': 1, 'evening': 1, 'before-bed': 1 };
+    function readWater(){
+      var raw = null;
+      try{ raw = JSON.parse(localStorage.getItem('bb-water-drank') || 'null'); }catch(e){}
+      var today = dayKey(new Date()), times = null;
+      if(raw && typeof raw === 'object' && !Array.isArray(raw)){
+        if(raw.date === today && Array.isArray(raw.times)) times = raw.times;
+        else if(Array.isArray(raw[today])) times = raw[today];
+      }
+      var glasses = 0;
+      if(times) times.forEach(function(id){ if(WATER_SLOTS[id]) glasses += WATER_SLOTS[id]; });
+      if(!glasses) return 'Water · not logged yet';
+      return 'Water · ' + glasses + ' of 8 glasses · ' + (glasses * 0.25).toFixed(2) + ' L';
+    }
+    function readSleep(){
+      var log = null;
+      try{ log = JSON.parse(localStorage.getItem('bb-sleep-log') || 'null'); }catch(e){}
+      if(log && typeof log === 'object' && !Array.isArray(log)){
+        var y = new Date(); y.setDate(y.getDate() - 1);
+        if(log[dayKey(y)] && log[dayKey(y)].slept) return 'Sleep · on time last night';
+        var t = dayKey(new Date());
+        if(log[t] && log[t].slept) return 'Sleep · logged tonight';
+      }
+      return 'Sleep · 9 PM to 5 AM';
+    }
+    function readCycle(){
+      try{
+        if(typeof cycleMarked === 'undefined' || !cycleMarked || cycleMarked.size === 0) return 'Cycle · not marked yet';
+        var t = new Date(), y = t.getFullYear(), m = t.getMonth(), d = t.getDate();
+        var key = (typeof phaseKeyForDate === 'function') ? phaseKeyForDate(y, m, d) : null;
+        if(key === 'period') return 'Cycle · Period day';
+        var ph = (typeof cyclePhaseFor === 'function') ? cyclePhaseFor(y, m, d) : null;
+        if(!ph) return 'Cycle · not marked yet';
+        var name = ph.cls.replace('phase-', '');
+        name = name.charAt(0).toUpperCase() + name.slice(1);
+        return 'Cycle · Day ' + ph.day + ' · ' + name;
+      }catch(e){ return 'Cycle · not marked yet'; }
+    }
+    function renderGlance(){
+      gClock.textContent = new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      gWater.textContent = readWater();
+      gSleep.textContent = readSleep();
+      gCycle.textContent = readCycle();
+    }
+    renderGlance();
+    setInterval(renderGlance, 30000);
+    window.addEventListener('bb-glance', renderGlance);
+  }
 })();
 </script>
 </body>
